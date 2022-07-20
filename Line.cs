@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace OOP_Metal_Up_A_Level_Project
 {
-    public class Line
+    public class Line : Shape
     {
         public Pen Pen 
         { 
@@ -44,11 +44,11 @@ namespace OOP_Metal_Up_A_Level_Project
         { 
 
         }
-        public void Draw(Graphics g)
+        public override void Draw(Graphics g)
         {
             g.DrawLine(Pen, X1, Y1, X2, Y2);
         }
-        public void GrowTo(int x2, int y2)
+        public override void GrowTo(int x2, int y2)
         {
             X2 = x2; Y2 = y2;
         }

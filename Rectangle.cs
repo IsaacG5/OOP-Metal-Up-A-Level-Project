@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace OOP_Metal_Up_A_Level_Project
 {
-    public class Rectangle
+    public class Rectangle : Shape
     {
         public Pen Pen 
         { 
@@ -45,14 +45,14 @@ namespace OOP_Metal_Up_A_Level_Project
         { 
 
         }
-        public void Draw(Graphics g)
+        public override void Draw(Graphics g)
         { 
             int x = Math.Min(X1, X2);
             int y = Math.Min(Y1, Y2);
             int w = Math.Max(X1, X2) - x; int h = Math.Max(Y1, Y2) - y;
             g.DrawRectangle(Pen, x, y, w, h);
         }
-        public void GrowTo(int x2, int y2)
+        public override void GrowTo(int x2, int y2)
         { 
             X2 = x2; Y2 = y2;
         }
