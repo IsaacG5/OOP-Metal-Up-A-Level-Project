@@ -16,20 +16,21 @@ namespace OOP_Metal_Up_A_Level_Project
         {
             InitializeComponent();
             DoubleBuffered = true;
+            shapes.Add(new Rectangle(currentPen, 100, 100, 300, 200));
         }
 
         Pen currentPen = new Pen(Color.Black);
         bool dragging = false;
         Point startOfDrag = Point.Empty;
         Point lastMousePosition = Point.Empty;
-        List<Line> lines = new List<Line>();
+        List<Object> shapes = new List<Object>();
 
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
             Graphics gr = e.Graphics;
-            foreach (Line line in lines)
+            foreach (dynamic shape in shapes)
             { 
-                line.Draw(gr);
+                shape.Draw(gr);
             }
         }
 
@@ -37,17 +38,17 @@ namespace OOP_Metal_Up_A_Level_Project
         {
             dragging = true;
             startOfDrag = lastMousePosition = e.Location;
-            lines.Add(new Line(currentPen, e.X, e.Y));
+            shapes.Add(new Line(currentPen, e.X, e.Y));
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)
             {
-                Line currentLine = lines.Last();
-                currentLine.GrowTo(e.X, e.Y);
+                dynamic shape = shapes.Last();
+                shape.GrowTo(e.X, e.Y);
                 lastMousePosition = e.Location;
-                Refresh(); 
+                Refresh();
             }
         }
 
