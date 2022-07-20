@@ -16,7 +16,9 @@ namespace OOP_Metal_Up_A_Level_Project
         {
             InitializeComponent();
             DoubleBuffered = true;
-            shapes.Add(new Rectangle(currentPen, 100, 100, 300, 200));
+            LineWidth.SelectedItem = "Medium";
+            Colour.SelectedItem = "Green";
+            Shape.SelectedItem = "Line";
         }
 
         Pen currentPen = new Pen(Color.Black);
@@ -38,7 +40,15 @@ namespace OOP_Metal_Up_A_Level_Project
         {
             dragging = true;
             startOfDrag = lastMousePosition = e.Location;
-            shapes.Add(new Line(currentPen, e.X, e.Y));
+            switch (Shape.Text)
+            { 
+                case "Line":
+                    shapes.Add(new Line(currentPen, e.X, e.Y));
+                    break;
+                case "Rectangle":
+                    shapes.Add(new Rectangle(currentPen, e.X, e.Y));
+                    break;
+            }
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
