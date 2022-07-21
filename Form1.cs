@@ -48,6 +48,9 @@ namespace OOP_Metal_Up_A_Level_Project
                 case "Rectangle":
                     shapes.Add(new Rectangle(currentPen, e.X, e.Y));
                     break;
+                case "Ellipse":
+                    shapes.Add(new Ellipse(currentPen, e.X, e.Y));
+                    break;
             }
         }
 

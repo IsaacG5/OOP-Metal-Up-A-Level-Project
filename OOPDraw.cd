@@ -10,15 +10,22 @@
   <Class Name="OOP_Metal_Up_A_Level_Project.Line">
     <Position X="2" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACgAAAAADAAAAAIABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAACgAAAAADAAAAAIABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Line.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Metal_Up_A_Level_Project.Rectangle">
-    <Position X="5.25" Y="3.25" Width="1.5" />
+    <Position X="5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAACgAAAAADAAAAAIABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Rectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Metal_Up_A_Level_Project.Ellipse">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACgAAAAADAAAAAIABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ellipse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -9,31 +9,31 @@ namespace OOP_Metal_Up_A_Level_Project
 {
     public abstract class Shape
     {
-        public Pen Pen
+        protected Pen Pen
         {
             get;
             private set;
         }
 
-        public int X1
+        protected int X1
         {
             get;
             private set;
         }
 
-        public int X2
+        protected int X2
         {
             get;
             private set;
         }
 
-        public int Y1
+        protected int Y1
         {
             get;
             private set;
         }
 
-        public int Y2
+        protected int Y2
         {
             get;
             private set;
