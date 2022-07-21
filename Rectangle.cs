@@ -52,7 +52,7 @@ namespace OOP_Metal_Up_A_Level_Project
             int w = Math.Max(X1, X2) - x; int h = Math.Max(Y1, Y2) - y;
             g.DrawRectangle(Pen, x, y, w, h);
         }
-        public override void GrowTo(int x2, int y2)
+        public void GrowTo(int x2, int y2)
         { 
             X2 = x2; Y2 = y2;
         }

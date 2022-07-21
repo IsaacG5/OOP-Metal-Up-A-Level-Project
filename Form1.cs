@@ -56,7 +56,7 @@ namespace OOP_Metal_Up_A_Level_Project
             if (dragging)
             {
                 Shape shape = shapes.Last();
-                shape.GrowTo(e.X, e.Y);
+                shape.GrowTo1(e.X, e.Y);
                 lastMousePosition = e.Location;
                 Refresh();
             }
