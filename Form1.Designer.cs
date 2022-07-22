@@ -44,6 +44,7 @@
             this.Canvas.Location = new System.Drawing.Point(163, 12);
             this.Canvas.Name = "Canvas";
             this.Canvas.Size = new System.Drawing.Size(625, 426);
+            this.Canvas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Canvas.TabIndex = 0;
             this.Canvas.TabStop = false;
             this.Canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
@@ -58,7 +59,7 @@
             "Thin",
             "Medium",
             "Thick"});
-            this.LineWidth.Location = new System.Drawing.Point(22, 71);
+            this.LineWidth.Location = new System.Drawing.Point(22, 54);
             this.LineWidth.Name = "LineWidth";
             this.LineWidth.Size = new System.Drawing.Size(121, 21);
             this.LineWidth.TabIndex = 1;
@@ -89,7 +90,7 @@
             "Red",
             "Green",
             "Blue"});
-            this.Colour.Location = new System.Drawing.Point(22, 164);
+            this.Colour.Location = new System.Drawing.Point(22, 145);
             this.Colour.Name = "Colour";
             this.Colour.Size = new System.Drawing.Size(121, 21);
             this.Colour.TabIndex = 4;
@@ -101,8 +102,9 @@
             this.Shape.Items.AddRange(new object[] {
             "Line",
             "Rectangle",
-            "Ellipse"});
-            this.Shape.Location = new System.Drawing.Point(22, 242);
+            "Ellipse",
+            "Circle"});
+            this.Shape.Location = new System.Drawing.Point(22, 227);
             this.Shape.Name = "Shape";
             this.Shape.Size = new System.Drawing.Size(121, 21);
             this.Shape.TabIndex = 5;

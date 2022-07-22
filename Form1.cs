@@ -51,6 +51,9 @@ namespace OOP_Metal_Up_A_Level_Project
                 case "Ellipse":
                     shapes.Add(new Ellipse(currentPen, e.X, e.Y));
                     break;
+                case "Circle":
+                    shapes.Add(new Circle(currentPen, e.X, e.Y));
+                    break;
             }
         }
 

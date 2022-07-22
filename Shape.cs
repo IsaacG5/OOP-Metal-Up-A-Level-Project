@@ -9,40 +9,30 @@ namespace OOP_Metal_Up_A_Level_Project
 {
     public abstract class Shape
     {
-        protected Pen Pen
+        public Pen Pen { get; protected set; }
+        public int X1 { get; protected set; }
+        public int Y1 { get; protected set; }
+        public int X2 { get; protected set; }
+        public int Y2 { get; protected set; }
+        public Shape(Pen p, int x1, int y1, int x2, int y2)
         {
-            get;
-            private set;
+            Pen = p;
+            X1 = x1;
+            Y1 = y1;
+            X2 = x2;
+            Y2 = y2;
+        }
+        public Shape(Pen p, int x1, int y1) : this(p, x1, y1, x1, y1)
+        {
+
         }
 
-        protected int X1
-        {
-            get;
-            private set;
-        }
-
-        protected int X2
-        {
-            get;
-            private set;
-        }
-
-        protected int Y1
-        {
-            get;
-            private set;
-        }
-
-        protected int Y2
-        {
-            get;
-            private set;
-        }
         public abstract void Draw(Graphics g);
 
         public void GrowTo1(int x2, int y2)
         {
-            X2 = x2; Y2 = y2;
+            X2 = x2;
+            Y2 = y2;
         }
     }
 }
