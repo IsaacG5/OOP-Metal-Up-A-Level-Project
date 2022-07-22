@@ -48,6 +48,7 @@ namespace OOP_Metal_Up_A_Level_Project
 
         private void AddShape(MouseEventArgs e)
         {
+            DeselectAll();
             switch (Shape.Text)
             {
                 case "Line":
@@ -63,6 +64,7 @@ namespace OOP_Metal_Up_A_Level_Project
                     shapes.Add(new Circle(currentPen, e.X, e.Y));
                     break;
             }
+            shapes.Last().Select();
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
@@ -123,6 +125,14 @@ namespace OOP_Metal_Up_A_Level_Project
                     break;
             }
             currentPen = new Pen(color, currentPen.Width);
+        }
+
+        private void DeselectAll()
+        { 
+            foreach (Shape s in shapes)
+            { 
+                s.Deselect();
+            } 
         }
 
         private void Action_SelectedIndexChanged(object sender, EventArgs e)

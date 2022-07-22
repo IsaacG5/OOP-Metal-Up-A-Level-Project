@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace OOP_Metal_Up_A_Level_Project
 {
@@ -14,6 +15,7 @@ namespace OOP_Metal_Up_A_Level_Project
         public int Y1 { get; protected set; }
         public int X2 { get; protected set; }
         public int Y2 { get; protected set; }
+        public bool Selected { get; private set; }
         public Shape(Pen p, int x1, int y1, int x2, int y2)
         {
             Pen = p;
@@ -41,6 +43,16 @@ namespace OOP_Metal_Up_A_Level_Project
         {
             X2 = x2;
             Y2 = y2;
+        }
+
+        public void Select()
+        { 
+            Selected = true; Pen.DashStyle = DashStyle.Dash;
+        }
+
+        public void Deselect() 
+        { 
+            Selected = false; Pen.DashStyle = DashStyle.Solid;
         }
 
         public (int, int, int, int) EnclosingRectangle()
