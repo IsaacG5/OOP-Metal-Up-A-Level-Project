@@ -40,8 +40,16 @@ namespace OOP_Metal_Up_A_Level_Project
         {
             dragging = true;
             startOfDrag = lastMousePosition = e.Location;
-            switch (Shape.Text)
+            if (Action.Text == "Draw") 
             { 
+                AddShape(e); 
+            }
+        }
+
+        private void AddShape(MouseEventArgs e)
+        {
+            switch (Shape.Text)
+            {
                 case "Line":
                     shapes.Add(new Line(currentPen, e.X, e.Y));
                     break;
@@ -61,8 +69,16 @@ namespace OOP_Metal_Up_A_Level_Project
         {
             if (dragging)
             {
-                Shape shape = shapes.Last();
-                shape.GrowTo1(e.X, e.Y);
+                Shape shape = shapes.Last(); switch (Action.Text)
+                {
+                    case "Move":
+                        if (lastMousePosition == Point.Empty) lastMousePosition = e.Location;
+                        shape.MoveBy(e.X - lastMousePosition.X, e.Y - lastMousePosition.Y);
+                        break;
+                    case "Draw":
+                        shape.GrowTo1(e.X, e.Y);
+                        break;
+                }
                 lastMousePosition = e.Location;
                 Refresh();
             }
@@ -71,6 +87,8 @@ namespace OOP_Metal_Up_A_Level_Project
         private void Canvas_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+            lastMousePosition = Point.Empty;
+            Refresh();
         }
 
         private void LineWidth_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,6 +123,11 @@ namespace OOP_Metal_Up_A_Level_Project
                     break;
             }
             currentPen = new Pen(color, currentPen.Width);
+        }
+
+        private void Action_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

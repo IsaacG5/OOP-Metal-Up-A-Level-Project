@@ -27,6 +27,14 @@ namespace OOP_Metal_Up_A_Level_Project
 
         }
 
+        public void MoveBy(int xDelta, int yDelta)
+        {
+            X1 += xDelta;
+            Y1 += yDelta;
+            X2 += xDelta;
+            Y2 += yDelta;
+        }
+
         public abstract void Draw(Graphics g);
 
         public void GrowTo1(int x2, int y2)
