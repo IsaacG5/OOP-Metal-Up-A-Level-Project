@@ -26,6 +26,18 @@ namespace OOP_Metal_Up_A_Level_Project
         Point startOfDrag = Point.Empty;
         Point lastMousePosition = Point.Empty;
         List<Shape> shapes = new List<Shape>();
+        private List<Shape> GetSelectedShapes()
+        {
+            return shapes.Where(s => s.Selected).ToList();
+        }
+        private void MoveSelectedShapes(MouseEventArgs e)
+        { 
+            foreach (Shape s in GetSelectedShapes())
+            {
+                s.MoveBy(e.X - lastMousePosition.X, e.Y - lastMousePosition.Y);
+            }
+        }
+
 
         private void Canvas_Paint(object sender, PaintEventArgs e)
         {
@@ -76,13 +88,13 @@ namespace OOP_Metal_Up_A_Level_Project
         {
             if (dragging)
             {
-                Shape shape = shapes.Last(); switch (Action.Text)
+                switch (Action.Text)
                 {
                     case "Move":
-                        if (lastMousePosition == Point.Empty) lastMousePosition = e.Location;
-                        shape.MoveBy(e.X - lastMousePosition.X, e.Y - lastMousePosition.Y);
+                        MoveSelectedShapes(e);
                         break;
                     case "Draw":
+                        Shape shape = shapes.Last();
                         shape.GrowTo1(e.X, e.Y);
                         break;
                     case "Select":
