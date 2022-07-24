@@ -18,7 +18,7 @@ namespace OOP_Metal_Up_A_Level_Project
         public bool Selected { get; private set; }
         public Shape(Pen p, int x1, int y1, int x2, int y2)
         {
-            Pen = p;
+            Pen = new Pen(p.Color, p.Width);
             X1 = x1;
             Y1 = y1;
             X2 = x2;

@@ -34,23 +34,29 @@ namespace OOP_Metal_Up_A_Level_Project
             { 
                 shape.Draw(gr);
             }
+            if (selectionBox != null) selectionBox.Draw(gr);
         }
 
         private void Canvas_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
             startOfDrag = lastMousePosition = e.Location;
-            if (Action.Text == "Draw") 
+            switch (Action.Text)
             { 
-                AddShape(e); 
+                case "Draw":
+                    AddShape(e);
+                    break;
+                case "Select":
+                    Pen p = new Pen(Color.Black, 1.0F);
+                    selectionBox = new Rectangle(p, startOfDrag.X, startOfDrag.Y);
+                    break;
             }
-        }
+        }  
 
         private void AddShape(MouseEventArgs e)
         {
-            DeselectAll();
             switch (Shape.Text)
-            {
+            { 
                 case "Line":
                     shapes.Add(new Line(currentPen, e.X, e.Y));
                     break;
@@ -64,7 +70,6 @@ namespace OOP_Metal_Up_A_Level_Project
                     shapes.Add(new Circle(currentPen, e.X, e.Y));
                     break;
             }
-            shapes.Last().Select();
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
@@ -80,6 +85,10 @@ namespace OOP_Metal_Up_A_Level_Project
                     case "Draw":
                         shape.GrowTo1(e.X, e.Y);
                         break;
+                    case "Select":
+                        selectionBox.GrowTo1(e.X, e.Y);
+                        SelectShapes();
+                        break;
                 }
                 lastMousePosition = e.Location;
                 Refresh();
@@ -90,6 +99,7 @@ namespace OOP_Metal_Up_A_Level_Project
         {
             dragging = false;
             lastMousePosition = Point.Empty;
+            selectionBox = null;
             Refresh();
         }
 
@@ -135,7 +145,22 @@ namespace OOP_Metal_Up_A_Level_Project
             } 
         }
 
+        Rectangle selectionBox;
+        private void SelectShapes()
+        {
+            DeselectAll();
+            foreach (Shape s in shapes) 
+            { 
+                if (selectionBox.FullySurrounds(s)) s.Select();
+            }
+        }
+
         private void Action_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Select_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

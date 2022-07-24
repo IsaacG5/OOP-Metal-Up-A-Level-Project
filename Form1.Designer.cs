@@ -79,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 129);
+            this.label2.Location = new System.Drawing.Point(19, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 3;
@@ -92,7 +92,7 @@
             "Red",
             "Green",
             "Blue"});
-            this.Colour.Location = new System.Drawing.Point(22, 145);
+            this.Colour.Location = new System.Drawing.Point(22, 128);
             this.Colour.Name = "Colour";
             this.Colour.Size = new System.Drawing.Size(121, 21);
             this.Colour.TabIndex = 4;
@@ -106,7 +106,7 @@
             "Rectangle",
             "Ellipse",
             "Circle"});
-            this.Shape.Location = new System.Drawing.Point(22, 227);
+            this.Shape.Location = new System.Drawing.Point(22, 180);
             this.Shape.Name = "Shape";
             this.Shape.Size = new System.Drawing.Size(121, 21);
             this.Shape.TabIndex = 5;
@@ -114,7 +114,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 211);
+            this.label3.Location = new System.Drawing.Point(19, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 6;
@@ -125,8 +125,9 @@
             this.Action.FormattingEnabled = true;
             this.Action.Items.AddRange(new object[] {
             "Draw",
-            "Move"});
-            this.Action.Location = new System.Drawing.Point(22, 297);
+            "Move",
+            "Select"});
+            this.Action.Location = new System.Drawing.Point(25, 240);
             this.Action.Name = "Action";
             this.Action.Size = new System.Drawing.Size(121, 21);
             this.Action.TabIndex = 7;
@@ -135,7 +136,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 272);
+            this.label4.Location = new System.Drawing.Point(23, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 8;
