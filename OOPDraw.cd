@@ -1,32 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="OOP_Metal_Up_A_Level_Project.Shape">
+  <Class Name="OOP_Metal_Up_A_Level_Project.Shape" Collapsed="true">
     <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACggAAAADAAAAAIABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAACggAAAADAAAAAIABQAAAAAAAQAAAIAI=</HashCode>
       <FileName>Shape.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OOP_Metal_Up_A_Level_Project.Line">
-    <Position X="5.5" Y="2.25" Width="1.5" />
+  <Class Name="OOP_Metal_Up_A_Level_Project.Line" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Line.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OOP_Metal_Up_A_Level_Project.Rectangle">
+  <Class Name="OOP_Metal_Up_A_Level_Project.Rectangle" Collapsed="true">
     <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAEAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Rectangle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OOP_Metal_Up_A_Level_Project.Ellipse">
+  <Class Name="OOP_Metal_Up_A_Level_Project.Ellipse" Collapsed="true">
     <Position X="1.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Ellipse.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Metal_Up_A_Level_Project.CompositeShape">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAoAAAAAAAACAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>CompositeShape.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Components" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
