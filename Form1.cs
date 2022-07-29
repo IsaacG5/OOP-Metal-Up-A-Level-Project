@@ -169,7 +169,26 @@ namespace OOP_Metal_Up_A_Level_Project
 
         private void Action_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch(Action.Text)
+            {
+                case "Group":
+                    GroupSelectedShapes();
+                    break;
+            }
+        }
 
+        private void GroupSelectedShapes()
+        {
+            var members = GetSelectedShapes();
+            if (members.Count < 2) return; //Group has no effect
+            CompositeShape compS = new CompositeShape(members);
+            compS.Select();
+            shapes.Add(compS);
+            foreach (Shape m in members)
+            { 
+                shapes.Remove(m); m.Deselect(); 
+            }
+            Refresh();
         }
 
         private void Select_SelectedIndexChanged(object sender, EventArgs e)
