@@ -29,11 +29,7 @@ namespace OOP_Metal_Up_A_Level_Project
             {
                 m.MoveBy(xDelta, yDelta);
             }
-            X1 += xDelta;
-            Y1 += yDelta;
-            X2 += xDelta; 
-            Y2 += yDelta;
-        }
+        } 
         public CompositeShape(List<Shape> components) : base(new Pen(Color.Black, 1.0F), 0, 0, 0, 0)
         {
             Pen.DashStyle = DashStyle.Dash;
