@@ -174,6 +174,9 @@ namespace OOP_Metal_Up_A_Level_Project
                 case "Group":
                     GroupSelectedShapes();
                     break;
+                case "Delete":
+                    DeleteSelectedShapes();
+                    break;
             }
         }
 
@@ -189,6 +192,14 @@ namespace OOP_Metal_Up_A_Level_Project
                 shapes.Remove(m); m.Deselect(); 
             }
             Refresh();
+        }
+
+        private void DeleteSelectedShapes()
+        {
+            foreach (Shape s in GetSelectedShapes())
+            { 
+                shapes.Remove(s);
+            } Refresh();
         }
 
         private void Select_SelectedIndexChanged(object sender, EventArgs e)
